@@ -1,0 +1,3 @@
+form large object structures across many disparate objects
+Allow you to compose objects into tree structures to represent part-whole hierarchies
+

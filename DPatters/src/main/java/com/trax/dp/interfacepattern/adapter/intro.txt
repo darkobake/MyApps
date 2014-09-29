@@ -1,0 +1,1 @@
+1. The intent of ADAPTER is to provide the interface a client expects, using the services of a class with a different interface.

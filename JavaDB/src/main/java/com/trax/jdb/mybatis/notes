@@ -1,0 +1,4 @@
+1. Every MyBatis application centers around an instance of SqlSessionFactory.
+A SqlSessionFactory instance can be acquired by using the SqlSessionFactoryBuilder. SqlSessionFactoryBuilder can build a SqlSessionFactory instance from an XML configuration file
+
+2. Acquiring the session factory : SqlSession session = sqlSessionFactory.openSession();

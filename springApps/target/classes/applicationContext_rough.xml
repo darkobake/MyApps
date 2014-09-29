@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="awaretest" class="com.trax.roughWork.BeanNameAware"></bean>-->
+
+    <bean id="juggler" class="com.trax.IocDiAOP_basic.iocDi.impl.Juggler"/>
+    <bean id="duke" class="com.trax.IocDiAOP_basic.iocDi.impl.Juggler">
+        <constructor-arg value="3" />
+    </bean>
+
+    <bean id="joepoet" class="com.trax.IocDiAOP_basic.iocDi.impl.Poet" />
+
+    <!-- objects in constructor and init and destroy methods -->
+    <bean id="poeticduke" class="com.trax.IocDiAOP_basic.iocDi.impl.PoeticJuggler" scope="prototype"
+            init-method="initMethod" destroy-method="destroyMethod">
+        <constructor-arg value="5"/>
+        <constructor-arg ref="joepoet"/>
+    </bean>
+
+    <!-- invoking classes using factory method (static method) (singleton classes)-->
+    <bean id="theStage" class="com.trax.IocDiAOP_basic.iocDi.Singleton.Stage" factory-method="getInstance"/>
+
+    <!-- using properties setter and getters -->
+    <bean id="saxophone" class="com.trax.IocDiAOP_basic.iocDi.impl.Saxophone"/>
+
+    <!--kenny the instrumentalist -->
+    <bean id="kenny" class="com.trax.IocDiAOP_basic.iocDi.impl.kenny">
+        <property name="song" value="nights in white" />
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+
+    <!-- creating an inner bean -->
+    <bean id="jhonny" class="com.trax.IocDiAOP_basic.iocDi.impl.kenny">
+        <property name="instrument">
+            <bean class="com.trax.IocDiAOP_basic.iocDi.impl.Saxophone"/>
+        </property>
+        <property name="song" value="tra tra tra"/>
+
+    </bean>
+    <!-- inner beans with constructors -->
+    <bean id="mike" class="com.trax.IocDiAOP_basic.iocDi.impl.kenny">
+        <constructor-arg value="tra la la " />
+        <constructor-arg>
+            <bean class="com.trax.IocDiAOP_basic.iocDi.impl.Saxophone"/>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- Wiring collection -->
+    <!-- 1. List set and arrays -->
+    <bean id="hank_onemanband" class="com.trax.IocDiAOP_basic.iocDi.impl.OneManBand">
+        <property name="instruments">
+            <list>
+                 <ref bean="saxophone"/>
+            </list>
+        </property>
+    </bean>
+    <!-- set -->
+    <bean id="hank_set_onemanband" class="com.trax.IocDiAOP_basic.iocDi.impl.OneManBand">
+        <property name="instruments">
+            <set>
+                <ref bean="saxophone"/>
+            </set>
+        </property>
+    </bean>
+
+    <!-- map -->
+    <bean id="hank_map_onemanband" class="com.trax.IocDiAOP_basic.iocDi.impl.OneManBand">
+        <property name="instrumentsMap">
+            <map>
+                <entry key="SAXOPHONE" value-ref="saxophone"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- properties -->
+    <bean id="hank_props_onemanband" class="com.trax.IocDiAOP_basic.iocDi.impl.OneManBand">
+        <property name="instrumentsprops">
+            <props>
+                <prop key="GUITAR">GUITAAARRRRR</prop>
+                <prop key="SITAR">SITAAAARRR</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- null -->
+    <bean id="kenny_null" class="com.trax.IocDiAOP_basic.iocDi.impl.kenny">
+        <property name="song"><null/></property>
+        <property name="instrument"><null/></property>
+    </bean>
+
+
+</beans>
