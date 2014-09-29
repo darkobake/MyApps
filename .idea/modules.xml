@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ADAandJava/ADAandJava.iml" filepath="$PROJECT_DIR$/ADAandJava/ADAandJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DPatters/DPatters.iml" filepath="$PROJECT_DIR$/DPatters/DPatters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDB/JavaDB.iml" filepath="$PROJECT_DIR$/JavaDB/JavaDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JmsApps/JmsApps.iml" filepath="$PROJECT_DIR$/JmsApps/JmsApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApps.iml" filepath="$PROJECT_DIR$/MyApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyUtils/MyUtils.iml" filepath="$PROJECT_DIR$/MyUtils/MyUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simpleWeb/simpleWeb.iml" filepath="$PROJECT_DIR$/simpleWeb/simpleWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springApps/springApps.iml" filepath="$PROJECT_DIR$/springApps/springApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webServicesCoffee/webServicesCoffee.iml" filepath="$PROJECT_DIR$/webServicesCoffee/webServicesCoffee.iml" />
+    </modules>
+  </component>
+</project>
+
